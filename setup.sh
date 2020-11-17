@@ -26,8 +26,8 @@ ubuntu()
 {
 	##Sys upgrade
 	printf "\e[1;31m Performing system upgrade\e[0m\n"
-	sudo apt update /dev/null 2>&1
-	sudo apt -y upgrade /dev/null 2>&1
+	sudo apt update > /dev/null 2>&1
+	sudo apt -y upgrade > /dev/null 2>&1
 	printf "Done"
 	
 	##Brave installation
@@ -35,13 +35,13 @@ ubuntu()
 	sudo apt install apt-transport-https curl gnupg
 	curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 	echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-	sudo apt update /dev/null 2>&1
-	sudo apt -y install brave-browser /dev/null 2>&1
+	sudo apt -y update > /dev/null 2>&1
+	sudo apt -y install brave-browser > /dev/null 2>&1
 	printf "Done"
 
 	##Required
 	printf "\n\n\n\n\e[1;31m Installing build and tools....\e[0m\n"
-	sudo apt -y install build-essential git wget vim /dev/null 2>&1
+	sudo apt -y install build-essential git wget vim > /dev/null 2>&1
 	printf "Done"
 
 	##Utility
