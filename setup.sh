@@ -26,13 +26,13 @@ ubuntu()
 {
 	##Sys upgrade
 	printf "\e[1;31m Performing system upgrade\e[0m\n"
-	sudo apt update > /dev/null 2>&1
-	sudo apt -y upgrade > /dev/null 2>&1
+	sudo apt -y update > /dev/null 2>&1
+	#sudo apt -y upgrade > /dev/null 2>&1
 	printf "Done"
 	
 	##Brave installation
 	printf "\n\n\n\n\e[1;31m Installing  Brave Browser Stable.....\e[0m\n"
-	sudo apt install apt-transport-https curl gnupg
+	sudo apt -y install apt-transport-https curl gnupg > /dev/null 2>&1
 	curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 	echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 	sudo apt -y update > /dev/null 2>&1
@@ -52,7 +52,7 @@ ubuntu()
 	##
 	printf "\n\n\n\n\e[1;31mCleaning installation\e[0m"
 	sudo apt -y autoremove /dev/null 2>&1
-	printf "Done
+	printf "Done"
 
 }
 
