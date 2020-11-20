@@ -60,7 +60,10 @@ ubuntu()
 
 arch()
 {
-	printf "Ok"
+	##Installing Brave(will work only on Manjaro based)
+	printf "\n\n\e[1;31Installing Brave....:\e[0m\n"
+	sudo pacman --noconfirm -Sy brave-browser
+	printf "\e[1;42Done\e[0m"
 }
 
 
