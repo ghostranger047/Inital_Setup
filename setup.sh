@@ -28,8 +28,8 @@ ubuntu()
 {
 	##Sys upgrade
 	printf "\e[1;31mPerforming system upgrade\e[0m:\n"
-	sudo apt -y update > /dev/null 2>&1
-	sudo apt -y upgrade > /dev/null 2>&1
+	sudo apt -y update
+	sudo apt -y upgrade
 	printf "\e[1;42mDone\e[0m"
 	
 	##Brave installation
@@ -47,11 +47,11 @@ ubuntu()
 	printf "\e[1;42mDone\e[0m"
 
 	##Utility Removal/installation:
-	sudo apt -y revome firefox
+	sudo apt -y remove firefox
 
 
 	##Autoremove
-	printf "\n\n\n\n\e[1;31mCleaning installation\e[0m:\n"
+	printf "\n\n\e[1;31mCleaning installation\e[0m:\n"
 	sudo apt -y autoremove > /dev/null 2>&1
 	printf "\e[1;42mDone.\e[0m"
 
@@ -79,5 +79,5 @@ if [[ $SYS == "ubuntu" ]]
 		source "$HOME/.bashrc"
 	else
 		echo "Arch"
-		common
+		
 fi
