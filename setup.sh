@@ -34,27 +34,26 @@ ubuntu()
 	
 	##Brave installation
 	printf "\n\n\n\n\e[1;31mInstalling  Brave Browser Stable.....\e[0m:\n"
-	sudo apt -y install apt-transport-https curl gnupg
+	sudo apt install -y apt-transport-https curl gnupg
 	curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 	echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-	sudo apt -y update
-	sudo apt -y install brave-browser
+	sudo apt update -y
+	sudo apt install -y brave-browser
 	printf "\e[1;42mDone\e[0m"
 
 	##Required
 	printf "\n\n\n\n\e[1;31mInstalling build and tools....\e[0m:\n"
-	sudo apt -y install build-essential git wget vim
+	sudo apt install -y build-essential git wget vim
 	printf "\e[1;42mDone\e[0m"
 
 	##Utility Removal/installation:
-	sudo apt -y remove firefox
+	sudo apt remove -y firefox
 
 
 	##Autoremove
 	printf "\n\n\e[1;31mCleaning installation\e[0m:\n"
-	sudo apt -y autoremove
+	sudo apt autoremove -y
 	printf "\e[1;42mDone.\e[0m"
-
 }
 
 
