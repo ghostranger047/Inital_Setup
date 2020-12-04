@@ -28,22 +28,22 @@ ubuntu()
 {
 	##Sys upgrade
 	printf "\e[1;31mPerforming system upgrade\e[0m:\n"
-	sudo apt -y update
-	sudo apt -y upgrade
+	sudo apt update
+	sudo apt upgrade
 	printf "\e[1;42mDone\e[0m"
 	
 	##Brave installation
 	printf "\n\n\n\n\e[1;31mInstalling  Brave Browser Stable.....\e[0m:\n"
-	sudo apt -y install apt-transport-https curl gnupg > /dev/null 2>&1
+	sudo apt -y install apt-transport-https curl gnupg
 	curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 	echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-	sudo apt -y update > /dev/null 2>&1
-	sudo apt -y install brave-browser > /dev/null 2>&1
+	sudo apt -y update
+	sudo apt -y install brave-browser
 	printf "\e[1;42mDone\e[0m"
 
 	##Required
 	printf "\n\n\n\n\e[1;31mInstalling build and tools....\e[0m:\n"
-	sudo apt -y install build-essential git wget vim > /dev/null 2>&1
+	sudo apt -y install build-essential git wget vim
 	printf "\e[1;42mDone\e[0m"
 
 	##Utility Removal/installation:
@@ -52,7 +52,7 @@ ubuntu()
 
 	##Autoremove
 	printf "\n\n\e[1;31mCleaning installation\e[0m:\n"
-	sudo apt -y autoremove > /dev/null 2>&1
+	sudo apt -y autoremove
 	printf "\e[1;42mDone.\e[0m"
 
 }
