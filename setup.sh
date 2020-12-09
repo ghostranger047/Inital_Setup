@@ -45,9 +45,13 @@ ubuntu()
 	printf "\n\n\n\n\e[1;31mInstalling build and tools....\e[0m:\n"
 	sudo apt install -y build-essential git wget vim
 	printf "\e[1;42mDone\e[0m"
+	
+	printf "\n\n\n\n\e[1;31mInstalling apps....\e[0m:\n"
+	sudo apt install -y qbittorrent mpv
+	printf "\e[1;42mDone\e[0m"
 
 	##Utility Removal/installation:
-	sudo apt remove -y firefox
+	sudo apt remove -y firefox vlc
 
 
 	##Autoremove
