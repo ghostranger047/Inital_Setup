@@ -47,7 +47,7 @@ ubuntu()
 	printf "\e[1;42mDone\e[0m"
 	
 	printf "\n\n\n\n\e[1;31mInstalling apps....\e[0m:\n"
-	sudo apt install -y qbittorrent mpv
+	sudo apt install -y qbittorrent mpv telegram-desktop
 	printf "\e[1;42mDone\e[0m"
 
 	##Utility Removal/installation:
