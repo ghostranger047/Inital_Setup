@@ -63,10 +63,26 @@ ubuntu()
 
 arch()
 {
+	##Installing updates
+	printf "\e[1;31mPerforming system upgrade\e[0m:\n"
+	sudo pacman --noconfirm -Syu
+	printf "\e[1;42mDone\e[0m"
+
+
 	##Installing Brave(will work only on Manjaro based)
 	printf "\n\n\e[1;31Installing Brave....:\e[0m\n"
 	sudo pacman --noconfirm -Sy brave-browser
 	printf "\e[1;42Done\e[0m"
+
+
+	##Required
+	printf "\n\n\n\n\e[1;31mInstalling build and tools....\e[0m:\n"
+	sudo pacman --noconfirm -S base-devel git wget vim yay
+	printf "\e[1;42mDone\e[0m"
+
+	printf "\n\n\n\n\e[1;31mInstalling apps....\e[0m:\n"
+	sudo pacman --noconfirm -S qbittorrent vlc telegram-desktop
+	printf "\e[1;42mDone\e[0m"
 }
 
 
@@ -82,5 +98,8 @@ if [[ $SYS == "ubuntu" ]]
 		source "$HOME/.bashrc"
 	else
 		echo "Arch"
+		arch
+		common
+		source "$HOME/.bashrc"
 		
 fi
